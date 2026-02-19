@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Cart</title>
+    <style>
+        body{font-family:Arial,Helvetica,sans-serif;background:#f3f3f3;color:#111;padding:20px}
+        .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+        .cart{max-width:1000px;margin:0 auto}
+        .item{display:flex;gap:16px;align-items:center;background:#fff;padding:12px;border-radius:8px;margin-bottom:12px}
+        .item img{width:80px;height:80px;object-fit:cover;border-radius:6px}
+        .title{font-weight:600}
+        .qty{margin-left:auto;margin-right:12px}
+        .remove{background:#e74c3c;color:#fff;padding:6px 10px;border-radius:6px;text-decoration:none}
+        .empty{max-width:600px;margin:60px auto;text-align:center;color:#666}
+        #cart-count{background:#e74c3c;color:#fff;border-radius:12px;padding:2px 6px;font-size:12px}
+        .actions{display:flex;gap:8px}
+        .clear{background:#555;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><a href="index.html">Continue shopping</a></div>
+        <div>Cart <span id="cart-count">0</span></div>
+    </div>
+
+    <div class="cart" id="cart-root"></div>
+
+    <script>
+        function render(){
+            var root = document.getElementById('cart-root');
+            try{var cart = JSON.parse(localStorage.getItem('cart')||'[]');}catch(e){var cart=[]}
+            document.getElementById('cart-count').textContent = cart.length;
+            root.innerHTML = '';
+            if(!cart.length){ root.innerHTML = '<div class="empty"><h3>Your cart is empty</h3><p>Browse items and click Add to Cart to add products.</p></div>'; return }
+            cart.forEach(function(it, idx){
+                var el = document.createElement('div'); el.className = 'item';
+                var img = document.createElement('img'); img.src = it.img || '';
+                var t = document.createElement('div'); t.innerHTML = '<div class="title">'+(it.title||'Unnamed')+'</div>';
+                var qty = document.createElement('div'); qty.className='qty'; qty.textContent = 'Qty: ' + (it.qty||1);
+                var remove = document.createElement('a'); remove.href='#'; remove.className='remove'; remove.textContent='Remove';
+                remove.addEventListener('click', function(e){ e.preventDefault(); cart.splice(idx,1); localStorage.setItem('cart', JSON.stringify(cart)); render(); });
+                el.appendChild(img); el.appendChild(t); el.appendChild(qty); el.appendChild(remove);
+                root.appendChild(el);
+            });
+            var actions = document.createElement('div'); actions.className='actions';
+            var clear = document.createElement('a'); clear.href='#'; clear.className='clear'; clear.textContent='Clear cart';
+            clear.addEventListener('click', function(e){ e.preventDefault(); localStorage.removeItem('cart'); render(); });
+            actions.appendChild(clear);
+            root.appendChild(actions);
+        }
+        render();
+    </script>
+</body>
+</html>

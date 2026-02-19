@@ -164,6 +164,18 @@
     .ab{
         color: white;
     }
+    .add-btn{
+        display: inline-block;
+        margin: 8px auto 0 auto;
+        padding: 8px 12px;
+        background:#2ecc71;
+        color:#fff;
+        border-radius:6px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:14px;
+    }
+    .add-btn:hover{ background:#27ae60 }
 </style>
 <body>
     <div class="wrraper">
@@ -181,17 +193,41 @@
          <div class="header">
             <div class="menu_bar">
                 <a class="child" href="index.html"><div>HOME</div></a>
-                <a class="child" href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"><div>ABOUT</div></a>
+                <a class="child" href="./about.html"><div>ABOUT</div></a>
                 <a class="child" href="./address.html"><div>CONTACT</div></a>
             </div>
             <div class="logo">
                 <img src="Screenshot 2026-02-18 174126.png" class="img_logo">
             </div>
             <div class="icons">
-                <a href=""><div class="i"><svg xmlns="http://www.w3.org/2000/svg" target="_blank" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M372-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm324.5-346.5Q570-592 570-631t-25.5-64.5Q519-721 480-721t-64.5 25.5Q390-670 390-631t25.5 64.5Q441-541 480-541t64.5-25.5ZM480-631Zm0 411Z"/></svg></div></a>
-                <a href="shopping.html"><div class="i" style="position:relative"><svg xmlns="http://www.w3.org/2000/svg" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm0-60h520v-520H630v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H390v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H220v520Zm170-580h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10ZM220-140v-520 520Z"/></svg><span id="cart-count" style="position:absolute;right:-6px;top:-6px;background:#e74c3c;color:#fff;border-radius:12px;padding:2px 6px;font-size:12px;">0</span></div></a>
+                <a href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"><div class="i"><svg xmlns="http://www.w3.org/2000/svg" target="_blank" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M372-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm324.5-346.5Q570-592 570-631t-25.5-64.5Q519-721 480-721t-64.5 25.5Q390-670 390-631t25.5 64.5Q441-541 480-541t64.5-25.5ZM480-631Zm0 411Z"/></svg></div></a>
+                <a href="cart.html"><div class="i" style="position:relative"><svg xmlns="http://www.w3.org/2000/svg" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm0-60h520v-520H630v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H390v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H220v520Zm170-580h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10ZM220-140v-520 520Z"/></svg><span id="cart-count" style="position:absolute;right:-6px;top:-6px;background:#e74c3c;color:#fff;border-radius:12px;padding:2px 6px;font-size:12px;">0</span></div></a>
             </div>
-        </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function(){
+                    function updateCartCount(){
+                        try{var cart = JSON.parse(localStorage.getItem('cart')||'[]');}catch(e){var cart=[]}
+                        var el = document.getElementById('cart-count');
+                        if(el) el.textContent = cart.length;
+                    }
+                    updateCartCount();
+
+                    document.querySelectorAll('.img').forEach(function(card){
+                        var titleEl = card.querySelector('h5');
+                        var imgEl = card.querySelector('img');
+                        var title = titleEl ? titleEl.innerText.trim() : '';
+                        var img = imgEl ? imgEl.src : '';
+                        var parentA = card.closest('a');
+                        var btn = document.createElement('a');
+                        btn.className = 'add-btn';
+                        btn.textContent = 'Add to Cart';
+                        btn.href = 'shopping.html?title=' + encodeURIComponent(title) + '&img=' + encodeURIComponent(img);
+                        if(parentA && parentA.parentNode) parentA.parentNode.insertBefore(btn, parentA.nextSibling);
+                    });
+                });
+            </script>
+            </div>
         <div class="sub-img">
             <h2>LIPSTICS</h2>
             <div class="imges">

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adding to cart</title>
+    <style>
+        body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111;padding:24px}
+        .msg{max-width:600px;margin:80px auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06);text-align:center}
+        a{color:#3498db}
+        .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+        #cart-count{background:#e74c3c;color:#fff;border-radius:12px;padding:2px 6px;font-size:12px}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="cart.html">Cart <span id="cart-count">0</span></a></div>
+    </div>
+    <div class="msg">
+        <h3>Adding item to your cart...</h3>
+        <p>If you are not redirected automatically, <a id="goto-cart" href="cart.html">go to cart</a>.</p>
+    </div>
+
+    <script>
+        function qs(name){
+            try{ return decodeURIComponent((new URLSearchParams(window.location.search)).get(name) || ''); }catch(e){return ''}
+        }
+        function updateCartCount(){
+            try{var cart = JSON.parse(localStorage.getItem('cart')||'[]');}catch(e){cart=[]}
+            var el = document.getElementById('cart-count'); if(el) el.textContent = cart.length;
+        }
+
+        (function(){
+            var title = qs('title');
+            var img = qs('img');
+            if(title){
+                try{
+                    var cart = JSON.parse(localStorage.getItem('cart')||'[]');
+                }catch(e){var cart=[]}
+                // if already exists, increment qty
+                var found = cart.find(function(it){ return it.title === title && it.img === img });
+                if(found){ found.qty = (found.qty || 1) + 1; }
+                else{ cart.push({ title: title, img: img, qty: 1 }); }
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+            updateCartCount();
+            // short delay then go to cart
+            setTimeout(function(){ window.location.href = 'cart.html'; }, 700);
+        })();
+    </script>
+</body>
+</html>
