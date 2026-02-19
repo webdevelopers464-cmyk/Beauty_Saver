@@ -166,7 +166,7 @@
     }
     .add-btn{
         display: inline-block;
-        margin: 8px auto 0 auto;
+        margin: 8px 0 0 0;
         padding: 8px 12px;
         background:#2ecc71;
         color:#fff;
@@ -174,8 +174,12 @@
         text-decoration:none;
         font-weight:600;
         font-size:14px;
+        text-align:center;
+        align-self:stretch;
+        display:block;
     }
     .add-btn:hover{ background:#27ae60 }
+    .card-wrapper{ display:flex; flex-direction:column; }
 </style>
 <body>
     <div class="wrraper">
@@ -223,7 +227,17 @@
                         btn.className = 'add-btn';
                         btn.textContent = 'Add to Cart';
                         btn.href = 'shopping.html?title=' + encodeURIComponent(title) + '&img=' + encodeURIComponent(img);
-                        if(parentA && parentA.parentNode) parentA.parentNode.insertBefore(btn, parentA.nextSibling);
+
+                        // create a small wrapper so the button sits under the card (avoids nesting anchors)
+                        if(parentA && parentA.parentNode){
+                            var wrapper = document.createElement('div');
+                            wrapper.className = 'card-wrapper';
+                            parentA.parentNode.replaceChild(wrapper, parentA);
+                            wrapper.appendChild(parentA);
+                            wrapper.appendChild(btn);
+                        } else {
+                            card.appendChild(btn);
+                        }
                     });
                 });
             </script>
