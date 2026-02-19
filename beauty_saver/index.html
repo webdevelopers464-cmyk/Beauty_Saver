@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAUTY_SAVER</title>
+    <link rel="icon" href="Screenshot 2026-02-18 174126.png">
+</head>
+<style>
+    body
+    {
+        background: #eeebeb;
+    }
+    .parent
+    {
+        display: flex;
+        justify-content: space-around;
+        /* background: #000; */
+        color: #1b1b1b;
+        /* width: 100%; */
+        height: 50px;
+        text-align: center;
+        align-items: center;
+    }
+    .imges
+    {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+        align-items: start;
+        padding: 18px;
+        cursor: pointer;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Card for each image + caption */
+    .img {
+        background: #fff;
+        color: #111;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .img img {
+        width: 160px;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 6px;
+        display: block;
+    }
+
+    .img h5 {
+        font-size: 14px;
+        margin: 10px 0 0 0;
+        line-height: 1.2;
+        list-style: none;
+    }
+
+    /* Responsive: collapse to fewer columns on narrow screens */
+    @media (max-width: 900px) {
+        .imges { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+        .imges { grid-template-columns: repeat(1, 1fr); }
+        .img img { width: 220px; height: 220px; }
+    }
+    h2
+    {
+        text-align: center;
+    }
+    .logo .log
+    {
+        width: 50px;
+    }
+    .nav, .parent, .icon
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* header */
+        *{
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+     .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        z-index: 100;
+        width: 100%;
+        height: 120px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 0 40px;
+    }
+
+    .menu_bar {
+        display: flex;
+        justify-content: space-around;
+        gap: 40px;
+        /* flex: 1; */
+    }
+
+    .child {
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #000;
+    }
+
+    /* .child:hover {
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+    } */
+
+    .img_logo {
+        width: 120px;
+        margin: 0 30px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+     .i {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .i:hover {
+        transform: scale(1.1);
+    }
+    /* footer */
+    .footer
+    {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        padding-top: 100px;
+        background: rgb(5, 1, 38);
+        color: white;
+        width: 100%;
+        height: 200px;
+    }
+    .or{
+        display: flex;
+        flex-direction: colu;
+    }
+    .about
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .ab{
+        color: white;
+    }
+</style>
+<body>
+    <div class="wrraper">
+        <!-- <div class="nav">
+            <div class="parent">
+                <div class="child">HOME</div>
+                <div class="child">ABOUT</div>
+                <div class="child">CONTACT</div>
+            </div>
+            <div class="logo">
+                <img src="Screenshot 2026-02-18 174126.png" class="log">
+            </div>
+           <div class="icons"></div>
+        </div> -->
+         <div class="header">
+            <div class="menu_bar">
+                <a class="child" href="index.html"><div>HOME</div></a>
+                <a class="child" href="#"><div>ABOUT</div></a>
+                <a class="child" href="./address.html"><div>CONTACT</div></a>
+            </div>
+            <div class="logo">
+                <img src="Screenshot 2026-02-18 174126.png" class="img_logo">
+            </div>
+            <div class="icons">
+                <a href="login.html"><div class="i"><svg xmlns="http://www.w3.org/2000/svg" target="_blank" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M372-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5T731-360q31 14 50 41t19 65v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm324.5-346.5Q570-592 570-631t-25.5-64.5Q519-721 480-721t-64.5 25.5Q390-670 390-631t25.5 64.5Q441-541 480-541t64.5-25.5ZM480-631Zm0 411Z"/></svg></div></a>
+                <a href="shopping.html"><div class="i" style="position:relative"><svg xmlns="http://www.w3.org/2000/svg" cursor="pointer" height="30px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M220-80q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h110v-10q0-63 43.5-106.5T480-880q63 0 106.5 43.5T630-730v10h110q24 0 42 18t18 42v520q0 24-18 42t-42 18H220Zm0-60h520v-520H630v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H390v90q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-90H220v520Zm170-580h180v-10q0-38-26-64t-64-26q-38 0-64 26t-26 64v10ZM220-140v-520 520Z"/></svg><span id="cart-count" style="position:absolute;right:-6px;top:-6px;background:#e74c3c;color:#fff;border-radius:12px;padding:2px 6px;font-size:12px;">0</span></div></a>
+            </div>
+        </div>
+        <div class="sub-img">
+            <h2>LIPSTICS</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/Wonderskin-Lip-Oil-Rehab-Serum/dp/B0DYVXMJNL/ref=sr_1_1_sspa?crid=24FVCM2ZGGQK0&dib=eyJ2IjoiMSJ9.FJRRvRRX9axY5ZbUvBbTm8qW7a5r7gwAAdT84VkpCy25jlfKPUhFkKn6MU2vMc_jRLrJ1mi0LC_Bp3-Xb73_XLLUvAQVzc4oH-vRQG2QG4UoNe3qdcN9-vnu-3NOpfDcz7pLHm3AZEZu8q9kd9LWwv6XoEMesiYvOiX9FbNoHe6gBMEpEJNsqATw5MZKshV9loHzZcDZiho2F7ICDvGcjNlktSk8lQNslfZ8tsVJXCrYnziGB_WKOHy4YrrabI7FjUjiqjlOgxwWh2u-fBo2ONnDdPV1HUSnDFgivXMEDDU.QZgt5nU8eq7676gmGbxvguc5bSSmQ5xUKBZuyKFcVq4&dib_tag=se&keywords=Wonderskin%2BLip%2BOil%2BRehab%2BSerum%2B-%2BTinted%2BLip%2BOil%2C%2BHydrating%2C%2BMoisturizing%2C%2Band%2BNon-Sticky%2BCoral%2BPink%2BTint%2BSerum%2Bfor%2BDry%2BLips%2B(Lover)&nsdOptOutParam=true&qid=1771420080&sprefix=wonderskin%2Blip%2Boil%2Brehab%2Bserum%2B-%2Btinted%2Blip%2Boil%2C%2Bhydrating%2C%2Bmoisturizing%2C%2Band%2Bnon-sticky%2Bcoral%2Bpink%2Btint%2Bserum%2Bfor%2Bdry%2Blips%2Blover%2B%2Caps%2C790&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/71ogPJYUUgL._AC_UL320_.jpg">
+                    <h5>Wonderskin Lip Oil Rehab Serum - Tinted Lip Oil, Hydrating, Moisturizing, and Non-Sticky Coral Pink Tint Serum for Dry Lips (Lover)</h5>
+                </div></a>
+                <a href="https://www.amazon.com/100-Pure-Butter-Lipstick-Prickly/dp/B01MD1B3WW/ref=sxin_17_pa_sp_search_thematic_sspa?content-id=amzn1.sym.218067fd-b344-4093-ab6c-6f5555bf2ed6%3Aamzn1.sym.218067fd-b344-4093-ab6c-6f5555bf2ed6&crid=1249GY4TGG63&cv_ct_cx=makeup%2Blipsticks&keywords=makeup%2Blipsticks&pd_rd_i=B01MD1B3WW&pd_rd_r=7b0bfd1b-927b-4230-a6c7-9b1e4ca1f009&pd_rd_w=goEoc&pd_rd_wg=4BuDF&pf_rd_p=218067fd-b344-4093-ab6c-6f5555bf2ed6&pf_rd_r=PF0ASAM3Q5VEYDMJF74R&qid=1771419087&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=makeup%2Blipstic%2Caps%2C499&sr=1-3-82c53dfb-e7ac-41f3-9604-355dc7747827-spons&aref=a7yfB6JBsP&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/71jy6P4n5yL._AC_UL320_.jpg">
+                    <h5>100% PURE Cocoa Butter Matte Lipstick Full Stay All Day Coverage, Lasting Moisturizing & Softening Natural Lip Color for All Skin Tones, Vegan Fruit Pigmented Mirage (Cool Deep Dusty Pink) - 0.15 oz</h5>
+                </div></a>
+                <a href="https://www.amazon.com/wet-wild-Hydrating-Formulated-Cruelty-Free/dp/B010GNWPMQ/ref=sr_1_18?crid=1249GY4TGG63&dib=eyJ2IjoiMSJ9.F_70Z-rFatve7s63ILcv1hykbRHk7t748EWp90XMVPh04DeigShW00EGCzRsNbAxmz7-FB3ZkvxfO43ppuQdqXVng_i0X4_c-QJtMbKQjuJEDgP8g9DHPxY7HNsjg9XUZFC9iyvPJcu2m5P4wolJTbWtRNHb6C6t1GTOvg0j4hBlg8lBiW9EDbwVsuqP-QhmOp4jcNSM3rrDyzqNun2OB2fOzAB_Mk0zu7_yUr8vZGiar7p0VFTqgBE2697Q90-CxyALKrVQ8QLx08r4L3CMNKGWk2HXdNs-jXaWKKMArUw.KGyoXRSYhu1NnH368Ctbzc4Vj4zr9alpO2Fo1IC3HG8&dib_tag=se&keywords=makeup+lipsticks&qid=1771419087&sprefix=makeup+lipstic%2Caps%2C499&sr=8-18" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/71xn7IX-95L._AC_UL320_.jpg">
+                    <h5>wet n wild Silk Finish Lipstick, Hydrating Rich Buildable Lip Color, Formulated with Vitamins A,E, & Macadamia for Ultimate Hydration, Cruelty-Free & Vegan - Cherry Frost</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Revlon-Lustrous-Lipstick-Vitamin-Avocado/dp/B07XTTDTWR/ref=sr_1_30?crid=1249GY4TGG63&dib=eyJ2IjoiMSJ9.F_70Z-rFatve7s63ILcv1hykbRHk7t748EWp90XMVPh04DeigShW00EGCzRsNbAxmz7-FB3ZkvxfO43ppuQdqXVng_i0X4_c-QJtMbKQjuJEDgP8g9DHPxY7HNsjg9XUZFC9iyvPJcu2m5P4wolJTbWtRNHb6C6t1GTOvg0j4hBlg8lBiW9EDbwVsuqP-QhmOp4jcNSM3rrDyzqNun2OB2fOzAB_Mk0zu7_yUr8vZGiar7p0VFTqgBE2697Q90-CxyALKrVQ8QLx08r4L3CMNKGWk2HXdNs-jXaWKKMArUw.KGyoXRSYhu1NnH368Ctbzc4Vj4zr9alpO2Fo1IC3HG8&dib_tag=se&keywords=makeup%2Blipsticks&qid=1771419087&sprefix=makeup%2Blipstic%2Caps%2C499&sr=8-30&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/61I0nbxDv9L._AC_UL320_.jpg" >
+                    <h5>Revlon Super Lustrous Lipstick, Creamy Formula For Soft, Fuller-Looking Lips, Moisturized Feel, 755 Bare It All, 0.15 oz</h5>
+                </div></a>
+                <a href="https://www.amazon.com/LAURA-GELLER-NEW-YORK-Lightweight/dp/B08MJ5BR7D/ref=sr_1_57?crid=1249GY4TGG63&dib=eyJ2IjoiMSJ9.F_70Z-rFatve7s63ILcv1hykbRHk7t748EWp90XMVPh04DeigShW00EGCzRsNbAxmz7-FB3ZkvxfO43ppuQdqXVng_i0X4_c-QJtMbKQjuJEDgP8g9DHPxY7HNsjg9XUZFC9iyvPJcu2m5P4wolJTbWtRNHb6C6t1GTOvg0j4hBlg8lBiW9EDbwVsuqP-QhmOp4jcNSM3rrDyzqNun2OB2fOzAB_Mk0zu7_yUr8vZGiar7p0VFTqgBE2697Q90-CxyALKrVQ8QLx08r4L3CMNKGWk2HXdNs-jXaWKKMArUw.KGyoXRSYhu1NnH368Ctbzc4Vj4zr9alpO2Fo1IC3HG8&dib_tag=se&keywords=makeup%2Blipsticks&qid=1771419087&sprefix=makeup%2Blipstic%2Caps%2C499&sr=8-57&th=1" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/610FrMZ6ZML._AC_UL320_.jpg">
+                    <h5>LAURA GELLER NEW YORK Italian Marble Sheer Lipstick - Berry Vanilla - Hydrating & Lightweight - Vitamin E & Caster Seed Oil - Cream Finish</h5>
+                </div></a>
+            </div>
+            <h2>FOUNDATION</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/Glo-Skin-Beauty-Paraben-Free-Cruelty-Free/dp/B00EV7CXLM/ref=sr_1_3_sspa?crid=2586QLVXFVRDG&dib=eyJ2IjoiMSJ9.xwpxVB4d4ciTmRhtS-XYfvp-6U8RR7cxc3pAQ869dtNM2QXa8IarfTx8bhzl7mCmVNu4IdbcUZizvuuYx-wo58QOk5Hpv6p-gGSf3zwVBahrMGc6GzhJC3Tm3JcmGUPKQv_hLJh7K6sfZg1kD_ViqnnfeV9e_L-JYiPo70Mq0s9J04mmahGWVz91ttDsA3cOJft7H2CjCYqLPNgqZ9pF5RNp5-sTRSrpgwq8-ib_FjYjsZ4q6Q3dix2JKfWebGRsdVYbS55E3cueXElEd26kR9lec1Z0q_TLc0zoHeyI8Nk.PxyNx-L_OkSwkp8Yaz_MyeihosTGMH9NFuAUqROJ7kQ&dib_tag=se&keywords=glow%2Bfoundation&qid=1771422788&sprefix=glow%2Bfoundation%2Caps%2C600&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/51LzsfPYmcL._AC_UL320_.jpg">
+                    <h5>Click to see full view Glo Skin Beauty Luminous Liquid Mineral Foundation Makeup with SPF 18 (Tahini) - Improves Uneven Skin Tone, Smooths & Corrects Imperfections, Sheer to Medium Coverage, Dewy Finish</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Makeup-Long-Lasting-Cruelty-Free-Fragrance-Free-Transfer-Proof/dp/B0DX7L2Q17/ref=sr_1_2_sspa?crid=3Q8EIADGIAGSM&dib=eyJ2IjoiMSJ9.sBpeMKWPFQLuI7F1z7jNoUGZ4GVbr2HhSwFO3AL2ojKZkR631XdJRQ1tr2N1tAg4IhJPmIQXhP16vuKp47GB2fNKtwv4DhMm41gyh05AnTMzUE8b2N7fNvnB1P-ob3BdOcS8UPYPpIn1OopScwUiwfNYiNdrYORFWPWPcBTHtvk_w_R18hW_SIiIHyy9aJEfHdA1LxGG08jZobCLR1-J_BMpYxVcfJLIKLjK3vi-vcDsm9bhYJvpjJhvplDT4pVTRjjuSUnTEwjsE8OChikAoaBSA4WezNHaOuefzHHQ1z4.YvjmyDVhfarUyPMe-j8eJIKHQKxMu00794kvgXBx7kE&dib_tag=se&keywords=foundations&qid=1771420645&sprefix=foundations%2Bof%2Bfamous%2Bbrands%2Caps%2C521&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/61GO2KuaiAL._AC_UL320_.jpg">
+                    <h5>No Makeup Makeup FlexShade Foundation + Brush Duo, Cream-Balm Formula Conceals, Corrects and Camouflages with Skin-Tone Adaptive Technology, Buildable, Long-Lasting, Cruelty-Free, Vegan, Deep</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Laura-Geller-York-Baked-Balance-N-Brighten/dp/B000IEMGGE/ref=sr_1_15?crid=3Q8EIADGIAGSM&dib=eyJ2IjoiMSJ9.sBpeMKWPFQLuI7F1z7jNoUGZ4GVbr2HhSwFO3AL2ojKZkR631XdJRQ1tr2N1tAg4IhJPmIQXhP16vuKp47GB2fNKtwv4DhMm41gyh05AnTMzUE8b2N7fNvnB1P-ob3BdOcS8UPYPpIn1OopScwUiwfNYiNdrYORFWPWPcBTHtvk_w_R18hW_SIiIHyy9aJEfHdA1LxGG08jZobCLR1-J_BMpYxVcfJLIKLjK3vi-vcDsm9bhYJvpjJhvplDT4pVTRjjuSUnTEwjsE8OChikAoaBSA4WezNHaOuefzHHQ1z4.YvjmyDVhfarUyPMe-j8eJIKHQKxMu00794kvgXBx7kE&dib_tag=se&keywords=foundations&qid=1771420829&sprefix=foundations%2Bof%2Bfamous%2Bbrands%2Caps%2C521&sr=8-15&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/716f5ea4zaL._AC_UL320_.jpg">
+                    <h5>LAURA GELLER NEW YORK Award-Winning Baked Balance-n-Brighten Color Correcting Powder Foundation - Fair - Buildable Light to Medium Coverage - Demi-Matte Natural Finish</h5>
+                </div></a>
+               <a href="https://www.amazon.com/Vibriance-Complexion-Sticks-Foundation-Buildable/dp/B0D96XBJ9V/ref=sr_1_13_sspa?crid=3Q8EIADGIAGSM&dib=eyJ2IjoiMSJ9.sBpeMKWPFQLuI7F1z7jNoUGZ4GVbr2HhSwFO3AL2ojKZkR631XdJRQ1tr2N1tAg4IhJPmIQXhP16vuKp47GB2fNKtwv4DhMm41gyh05AnTMzUE8b2N7fNvnB1P-ob3BdOcS8UPYPpIn1OopScwUiwfNYiNdrYORFWPWPcBTHtvk_w_R18hW_SIiIHyy9aJEfHdA1LxGG08jZobCLR1-J_BMpYxVcfJLIKLjK3vi-vcDsm9bhYJvpjJhvplDT4pVTRjjuSUnTEwjsE8OChikAoaBSA4WezNHaOuefzHHQ1z4.YvjmyDVhfarUyPMe-j8eJIKHQKxMu00794kvgXBx7kE&dib_tag=se&keywords=foundations&qid=1771420829&sprefix=foundations%2Bof%2Bfamous%2Bbrands%2Caps%2C521&sr=8-13-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/617s9KE2RaL._AC_UL320_.jpg" >
+                    <h5>Vibriance Complexion Sticks - Foundation for Mature Skin - Sheer, Buildable Coverage Face Makeup Foundation for Older Women - 3-in-1 Base, Contour, Concealer - Light</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Maybelline-New-York-Foundation-Packaging/dp/B004675EI6/ref=sr_1_29?crid=3Q8EIADGIAGSM&dib=eyJ2IjoiMSJ9.sBpeMKWPFQLuI7F1z7jNoUGZ4GVbr2HhSwFO3AL2ojKZkR631XdJRQ1tr2N1tAg4IhJPmIQXhP16vuKp47GB2fNKtwv4DhMm41gyh05AnTMzUE8b2N7fNvnB1P-ob3BdOcS8UPYPpIn1OopScwUiwfNYiNdrYORFWPWPcBTHtvk_w_R18hW_SIiIHyy9aJEfHdA1LxGG08jZobCLR1-J_BMpYxVcfJLIKLjK3vi-vcDsm9bhYJvpjJhvplDT4pVTRjjuSUnTEwjsE8OChikAoaBSA4WezNHaOuefzHHQ1z4.YvjmyDVhfarUyPMe-j8eJIKHQKxMu00794kvgXBx7kE&dib_tag=se&keywords=foundations&qid=1771420829&sprefix=foundations%2Bof%2Bfamous%2Bbrands%2Caps%2C521&sr=8-29&th=1" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/61ZLA-VUiHL._AC_UL320_.jpg">
+                    <h5>Click to see full viewMaybelline Fit Me Dewy + Smooth Liquid Foundation Makeup, Classic Ivory, 1 Count (Packaging May Vary)</h5>
+                </div></a>
+            </div>
+            <h2>EYE_MAKEUP</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/Julep-Eyeshadow-Hypoallergenic-Waterproof-Available/dp/B01LW1983J/ref=sr_1_1_sspa?crid=276D7W1U771MM&dib=eyJ2IjoiMSJ9.a9bXWQwawhpS7swtTYMhVC0Ez5max8wybE2LKeMQmNizs41Je9GqXnklIpzKCYD-1Dbyevrlu4uauQEyANNUzwYQENve2TJqIN82982znai0DmGJZ4ObEmIOdUiJuFOrJuFhSnz0TuFg5-TXuL3mwe77ZTxNrtszeni4OZaBpmrLxwAmfSsYRhEUF_0ujcyOeb1fUk3nJn3InVtUs9kD5KNSiaE2lOshjNBStA0d-Ap1eBfzc8KrPCP7zL5iRiCjSrilWajDhRv2Dj1MfQPc64yMl_hEu0JfeP9ZSIhKsqw.4qfyRVuyGrxvybFWwEfrLSWQv_KgUG-9S5UJjhp7D34&dib_tag=se&keywords=eye+makeup&qid=1771423918&sprefix=eye+mak%2Caps%2C1531&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/81P-k2IHyiL._AC_UL320_.jpg">
+                    <h5>Julep Eyeshadow 101 Cream-to-Powder Waterproof Shadow Stick – Champagne Shimmer – Long-Lasting, Crease-Proof, Medium Golden-Beige Shimmer Cream Eyeshadow with Built-in Smudger</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Laura-Geller-Kajal-Longwear-Mascara/dp/B0C59YCD3G/ref=sxin_17_pa_sp_search_thematic_sspa?content-id=amzn1.sym.218067fd-b344-4093-ab6c-6f5555bf2ed6%3Aamzn1.sym.218067fd-b344-4093-ab6c-6f5555bf2ed6&crid=276D7W1U771MM&cv_ct_cx=eye+makeup&keywords=eye+makeup&pd_rd_i=B0C59YCD3G&pd_rd_r=cac387d5-dfe4-4641-9ee2-ccb9b595d7fa&pd_rd_w=UstM4&pd_rd_wg=yR7jR&pf_rd_p=218067fd-b344-4093-ab6c-6f5555bf2ed6&pf_rd_r=DCDPC6789E148E6V7AQA&qid=1771424371&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=eye+mak%2Caps%2C1531&sr=1-4-82c53dfb-e7ac-41f3-9604-355dc7747827-spons&aref=r5aOZMDC0N&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/61nXx59O0DL._AC_UL320_.jpg">
+                    <h5>Click to see full view LAURA GELLER NEW YORK Kajal Longwear Mascara - Lengthening, Defining, Curling, Buildable Formula Eye Makeup - Innovative Curling Brush - 1 count</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Azenlo-Eyelashes-Lashes-Fluffy-%EF%BC%88style/dp/B0DTFYYJM7/ref=sxin_17_pa_sp_search_thematic_sspa?content-id=amzn1.sym.ef9532fd-5ede-4037-9cbf-0f78b1956bd5%3Aamzn1.sym.ef9532fd-5ede-4037-9cbf-0f78b1956bd5&crid=41EWAEZUIXAQ&cv_ct_cx=eye%2Blashes&keywords=eye%2Blashes&pd_rd_i=B0DTFYYJM7&pd_rd_r=0f1dcaea-3897-4717-a3f2-0f4dd5fb35e6&pd_rd_w=6kD8w&pd_rd_wg=6j5AS&pf_rd_p=ef9532fd-5ede-4037-9cbf-0f78b1956bd5&pf_rd_r=PW68C52G7E7CNVPKNGR3&qid=1771479090&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=eye%2Blashes%2Caps%2C332&sr=1-1-daa32b8b-15a9-449b-a023-4e27c01891b5-spons&aref=KVMcKRXP3n&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/51Dr0v75JqL._SY300_SX300_QL70_FMwebp_.jpg">
+                    <h5>False Eyelashes 20 Pairs Wispy Lashes Faux Mink Lashes 14mm 3D Fluffy Cat Eye Lashes (style 20-061)</h5>
+                </div></a>
+               <a href="https://www.amazon.com/gp/aw/d/B07CS2ZKQ3/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=c156faac5c10e5d038acda4a5e5add65&hsa_cr_id=0&qid=1771424371&sr=1-2-f02f01d6-adaf-4bef-9a7c-29308eff9043&ref_=sbx__sbtcd2_asin_1_img&pd_rd_w=CwGOa&content-id=amzn1.sym.e2c9099f-6964-4dbf-9ce9-8bc2c1a8ec1a%3Aamzn1.sym.e2c9099f-6964-4dbf-9ce9-8bc2c1a8ec1a&pf_rd_p=e2c9099f-6964-4dbf-9ce9-8bc2c1a8ec1a&pf_rd_r=DCDPC6789E148E6V7AQA&pd_rd_wg=yR7jR&pd_rd_r=cac387d5-dfe4-4641-9ee2-ccb9b595d7fa&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/413clwUr2IL._SY300_SX300_QL70_FMwebp_.jpg" >
+                    <h5>e.l.f. Perfect 10 Eyeshadow Palette, Ten Ultra-pigmented Shimmer & Matte Shades, Vegan & Cruelty-free, Nude Rose Gold (Packaging May Vary)</h5>
+                </div></a>
+                <a href="amazon.com/NYX-PROFESSIONAL-MAKEUP-Ultimate-Eyeshadow/dp/B01IW02HX2/ref=sr_1_8?crid=UQ3RC9K3GDNL&dib=eyJ2IjoiMSJ9.saBl2ytgKX3wMMowtjK2pJxzzMFVYw41wrFRY_REKO_ZlTM8Tu1Ka876Ni-ZLAJ7IHfe94aPEu0evqnKZPs1VpwjGVSpkAgkriNS5Pwkjx0ahMaPoduG3g0qAamO8rWddGxh09-vm9uQzgTAWpAcNppyLXt4tV0egMMoWr4GLP7SJMd7jUuPrxjxCQH_LkVwzR7S40XJjeNh7sbUJroU4cobyIvh6B-iOAHg6-SsVT3IBnpJ9ZmJc-2mq1cR3BUas3b3HFIMA9T_bYrSvox6rDdxoOmrpvnLAz0kUHEHYb4.eQYZO707O7Bc4Foy3jYSpFCyTUDC0xMpGFrMu2dZx08&dib_tag=se&keywords=eye+shadow+palettes&qid=1771425255&sprefix=eye+SHADOW+%2Caps%2C502&sr=8-8" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/71jZIqmrivL._AC_UL320_.jpg">
+                    <h5>NYX PROFESSIONAL MAKEUP Ultimate Shadow Palette, Eyeshadow Palette - Warm Neutrals</h5>
+                </div></a>
+            </div>
+            <h2>SKIN_CARE</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/Dr-Althea-Moisturizer-Soothing-Recovery-Niacinamide/dp/B0FKGJYFC8/ref=sr_1_3?crid=2P5VJV2SSCED&dib=eyJ2IjoiMSJ9.l1SmSfDanx_YtVSs6YFko1OVjb7dHT8b2s7fO2urZVyQ9F7RLuHY84A5KIq0NS_9Ytxthz621p8n2QzLyBg07w-hcVrNSwF31_Cx8LfEsR48MSezGH_1X9v9W8ueD4yYHeBXS7dOS_EIGlr-ywTAjv7VAoJlWTzsqv6b6Fz4EZhXVnk_zvJhJNXOetKxOZgvHwSlDbd8JTi9loqfb9UJ8-GRAYGgTtDFIfHgG_F1TYOrpeKSPN2mwQH2iVMSvhLYhdF-1VutdV2suYmVvb3-_B_Lj9ewOpcC3EIKiYtKiaI.fabsVhACCJWrFdrjUVXKNkxy8bhTJfi1KehobHRbjMc&dib_tag=se&keywords=skin+care&qid=1771427342&sprefix=ski%2Caps%2C574&sr=8-3" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/51UX-wuSjTL._AC_UL320_.jpg">
+                    <h5>Dr.Althea 345 Relief Cream | Daily Face Moisturizer for Soothing Recovery and Blemish Care with PDRN & Niacinamide | Korean Vegan Skin Care for All Skin Types, 1.69 Fl Oz (Ver.2 - Pack of 1)</h5>
+                </div></a>
+                <a href="https://www.amazon.com/l-f-Hydrated-Skincare-Hydration-Cleanser/dp/B08T7DSZYD/ref=sr_1_6?crid=2P5VJV2SSCED&dib=eyJ2IjoiMSJ9.l1SmSfDanx_YtVSs6YFko1OVjb7dHT8b2s7fO2urZVyQ9F7RLuHY84A5KIq0NS_9Ytxthz621p8n2QzLyBg07w-hcVrNSwF31_Cx8LfEsR48MSezGH_1X9v9W8ueD4yYHeBXS7dOS_EIGlr-ywTAjv7VAoJlWTzsqv6b6Fz4EZhXVnk_zvJhJNXOetKxOZgvHwSlDbd8JTi9loqfb9UJ8-GRAYGgTtDFIfHgG_F1TYOrpeKSPN2mwQH2iVMSvhLYhdF-1VutdV2suYmVvb3-_B_Lj9ewOpcC3EIKiYtKiaI.fabsVhACCJWrFdrjUVXKNkxy8bhTJfi1KehobHRbjMc&dib_tag=se&keywords=skin+care&qid=1771427342&sprefix=ski%2Caps%2C574&sr=8-6" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/71sWWbYc1rL._AC_UL320_.jpg">
+                    <h5>e.l.f. SKIN Holy Hydration! Hydrated Ever After Skincare Mini Kit, Cleanser, Makeup Remover, Moisturizer & Eye Cream For Hydrating Skin, Airplane-Friendly Sizes</h5>
+                </div></a>
+                <a href="https://www.amazon.com/NEXTBEAU-Solution-Niacinamide-Collagen-Hyaluronic/dp/B0BPLLXT7Y/ref=sr_1_33?crid=VQ7DC64QBGC2&dib=eyJ2IjoiMSJ9.Fzqfd8caRap6VPePPnWScharzsJlpxsL5R9YKRzEb_fq3IrKX-0nYxcgTDOXpFPhLVghZIAc__G6Q_JHz4KGijDVE_2M4lzwcQhY2nYuNa9oH-10438RLPlP6BMsd5ualmQK1nCMKw6Uxen4PSohltE7NUWxYMKIrSDhBsYs268O8bLibDJiB3T3voCvrTlU87Ff3tJD8wquZZPNJSAd5L7f6TPw-4rFwV9Xew0Z6regQUEZhrhKx0XAVji7A1WXHg_x84gbSONBedt-5M6gs9tTZj66w4AXIlE0_Kzl5wo.9jyN9qqjlj060c5cvFjKufPm8y0qj4FJ8e4CmPbg2I8&dib_tag=se&keywords=face%2Bmasks&qid=1771429693&sprefix=face%2Bmac%2Caps%2C367&sr=8-33&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/51y0KkRkQ9L._SX425_.jpg">
+                    <h5>Solution Sheet Mask Variety Pack, 10 Count (5 Types x 2 Sheets), 0.74 fl oz Each, Korean Facial Sheet Masks for Daily Skincare</h5>
+                </div></a>
+               <a href="https://www.amazon.com/CeraVe-Moisturizing-Lotion-Hyaluronic-Fragrance/dp/B000YJ2SLG/ref=sr_1_2?crid=1D6B4DEHGAWWZ&dib=eyJ2IjoiMSJ9.kLrCEl4_btj6RJuDnk2ZogkNJ7wS6dlK6JEl_Z40h5JUJSBNsVsv10C6Np50MnrIJW8lRNGyV8u5nOWUHVIe03sPv9RXPW3yQS5C1We2ttYyYdqXfV21_F92WrpNuECfYs0hSLepB4Con7nzoOB6zAPwnvs6PbQslkVrOCN--DAinbnGPd3knLarx7dzTnAYugGwU7EBz6Pma0D-xY7CVge7-FX7pmvGHHgZtPzTKpeCRSahLIK-ChIvcXRvNWkngYVNKD_mpoG4fvHf9inA9xH07u4ZQyLuxYV7abCx6co.1cD9iBPlHSq5tZ-z9L5QCno86TWp1LXLuonbZwkosjI&dib_tag=se&keywords=lotion&qid=1771427935&sprefix=lotion%2Caps%2C355&sr=8-2&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/61jeXEEvGAL._SX425_.jpg" >
+                    <h5>CeraVe Daily Moisturizing Lotion for Dry Skin, Body Lotion & Face Moisturizer with Hyaluronic Acid and Ceramides, Daily Moisturizer, Fragrance Free, Oil-Free, 12 Ounce</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Scrubber-Exfoliator-Silicone-Cleansing-Blackhead/dp/B0BX975YKZ/ref=sr_1_33?crid=26FTGXCG7BISA&dib=eyJ2IjoiMSJ9.l1SmSfDanx_YtVSs6YFko1OVjb7dHT8b2s7fO2urZVyQ9F7RLuHY84A5KIq0NS_9Ytxthz621p8n2QzLyBg07w-hcVrNSwF31_Cx8LfEsR48MSezGH_1X9v9W8ueD4yYHeBXS7dOS_EIGlr-ywTAjv7VAoJlWTzsqv6b6Fz4EZhXVnk_zvJhJNXOetKxOZgvHwSlDbd8JTi9loqfb9UJ8-GRAYGgTtDFIfHgG_F1TYOrpeKSPN2mwQH2iVMSvhLYhdF-1VutdV2suYmVvb3-_B_Lj9ewOpcC3EIKiYtKiaI.fabsVhACCJWrFdrjUVXKNkxy8bhTJfi1KehobHRbjMc&dib_tag=se&keywords=skin+care&qid=1771428131&sprefix=skin+care%2Caps%2C371&sr=8-33" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/71mUU8Y6yNL._AC_UL320_.jpg">
+                    <h5>Silicone Facial Cleansing Brush - 4 Pack Face Scrubber &amp; Exfoliator for Deep Cleaning, Soft Brush, Blackhead &amp; Acne Pore Care Click to see full view Silicone Facial Cleansing Brush - 4 Pack Face Scrubber & Exfoliator for Deep Cleaning, Soft Brush, Blackhead & Acne Pore Care</h5>
+                </div></a>
+            </div>
+            <h2>BLUSH</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/NYX-PROFESSIONAL-MAKEUP-Buttermelt-Transfer-Resistant/dp/B0CZ5HV1LB/ref=sr_1_32?crid=3FOXOS1G9OLCR&dib=eyJ2IjoiMSJ9.sIjAAcNySmctfOr_-GIi9RuWpNShUYo3n0m3FZi1x0A6Qq0bd_ghbSfALs7ru1o25qtVvfHTp1QnsPdPvT8mkC8-cRBHbvhtIlD208bGjG90sPHmcOl6IyOpt1GiKuBH61UjI883LRWvOBSIi86WpbE5bu7enI5U8o-AAx66L_6BXslUjXDaADFPQE-8j5Ja2tQLwH6LVxmUUzypE8XkovcMLhJ-7E-kmnqJ7tagvqhHW07JfRrxBO5kV4oV3h1SQZqhI-J_UIkgXRrU7a36WwQjJJnDWJPKcO0D7Jc1JtM.iRZWNdZhca6be12HCC5W8YZB_MiUfI4aOkY-9McJg2s&dib_tag=se&keywords=blush%2Bpalette&qid=1771430755&sprefix=blush%2Bprlat%2Caps%2C379&sr=8-32&th=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/51lyrPrvGuL._AC_UL320_.jpg">
+                    <h5>Click to see full view NYX PROFESSIONAL MAKEUP Buttermelt Powder Blush, Fade and Transfer-Resistant Blush, Up to 12HR Make Up Wear, Vegan Formula - Back And Butta</h5>
+                </div></a>
+                <a href="https://www.amazon.com/wet-wild-Effortless-Luxuriously-Cruelty-Free/dp/B082YPNTZ4/ref=sr_1_38?crid=3FOXOS1G9OLCR&dib=eyJ2IjoiMSJ9.sIjAAcNySmctfOr_-GIi9RuWpNShUYo3n0m3FZi1x0A6Qq0bd_ghbSfALs7ru1o25qtVvfHTp1QnsPdPvT8mkC8-cRBHbvhtIlD208bGjG90sPHmcOl6IyOpt1GiKuBH61UjI883LRWvOBSIi86WpbE5bu7enI5U8o-AAx66L_6BXslUjXDaADFPQE-8j5Ja2tQLwH6LVxmUUzypE8XkovcMLhJ-7E-kmnqJ7tagvqhHW07JfRrxBO5kV4oV3h1SQZqhI-J_UIkgXRrU7a36WwQjJJnDWJPKcO0D7Jc1JtM.iRZWNdZhca6be12HCC5W8YZB_MiUfI4aOkY-9McJg2s&dib_tag=se&keywords=blush%2Bpalette&qid=1771431097&sprefix=blush%2Bprlat%2Caps%2C379&sr=8-38&th=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/81FSUbGs2dL._AC_UL320_.jpg">
+                    <h5>wet n wild Color Icon Blush, Effortless Matte Natural Sheer Glow & Seamless Blend, Luxuriously Infused Smooth Jojoba Oil, Cruelty-Free & Vegan - Pinch Me Pink</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Markwins-Beauty-Brands-Illuminating-320/dp/B01E1SLZ3M/ref=sr_1_48?crid=3FOXOS1G9OLCR&dib=eyJ2IjoiMSJ9.sIjAAcNySmctfOr_-GIi9RuWpNShUYo3n0m3FZi1x0A6Qq0bd_ghbSfALs7ru1o25qtVvfHTp1QnsPdPvT8mkC8-cRBHbvhtIlD208bGjG90sPHmcOl6IyOpt1GiKuBH61UjI883LRWvOBSIi86WpbE5bu7enI5U8o-AAx66L_6BXslUjXDaADFPQE-8j5Ja2tQLwH6LVxmUUzypE8XkovcMLhJ-7E-kmnqJ7tagvqhHW07JfRrxBO5kV4oV3h1SQZqhI-J_UIkgXRrU7a36WwQjJJnDWJPKcO0D7Jc1JtM.iRZWNdZhca6be12HCC5W8YZB_MiUfI4aOkY-9McJg2s&dib_tag=se&keywords=blush%2Bpalette&qid=1771431097&sprefix=blush%2Bprlat%2Caps%2C379&sr=8-48&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/81CWf4cePZL._AC_UL320_.jpg">
+                    <h5>wet n wild MegaGlo Illuminating Blush Makeup Powder Palette, Catwalk Pink, Highlighter Face Make Up</h5>
+                </div></a>
+               <a href="https://www.amazon.com/Boobeen-Highlighter-Palette-Illuminator-Highlighting/dp/B0CC5FYN7D/ref=pd_sbs_d_sccl_1_8/139-8900747-0718650?pd_rd_w=B3Nhx&content-id=amzn1.sym.aa738fbd-ad05-4d11-aae2-04b598db6305&pf_rd_p=aa738fbd-ad05-4d11-aae2-04b598db6305&pf_rd_r=XV9NSFKDD77X76ZZ8CVY&pd_rd_wg=0fo1C&pd_rd_r=3f950d1f-9d36-45c0-8f16-327492b2dd9a&pd_rd_i=B0CC5FYN7D&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/51Ez4IDMnyL._SY300_SX300_QL70_FMwebp_.jpg" >
+                    <h5>Boobeen Blush and Highlighter Palette- 4-color Metallic Shimmer Shadow Powder, Illuminator Makeup Set for Shading, Highlighting & Defining the Face</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Catrice-Palette-Blurring-Highlighter-Powder/dp/B0FGJXKSQ9/ref=pd_sbs_d_sccl_1_9/139-8900747-0718650?pd_rd_w=lqBZN&content-id=amzn1.sym.aa738fbd-ad05-4d11-aae2-04b598db6305&pf_rd_p=aa738fbd-ad05-4d11-aae2-04b598db6305&pf_rd_r=K116PK51EKCFK62S7KN0&pd_rd_wg=LOpi1&pd_rd_r=0c015e8e-ebb1-4675-94b6-4c78ae7beaed&pd_rd_i=B0FGJXKSQ9&psc=1" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/814wjlhkaqL._SX425_.jpg">
+                    <h5>Catrice Blur Balm Blush Palette | 6-in-1 Blurring Flush & Highlighter Makeup | Balm-to-Powder Formula | Vegan & Cruelty Free</h5>
+                </div></a>
+            </div>
+            <h2>NAIL POLISH</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/RARJSM-Polish-Neutral-Transparent-Manicure/dp/B0CSJYH8HC/ref=sr_1_14?crid=20E6TKSA7PU0L&dib=eyJ2IjoiMSJ9.oQJ5pID47FYyI4Hoasa8IBBnPHXEyx1aOrFfF7HOXRPe6sR0rJ4b1w-3Jx7pw6-w5kc8DQI3hJDppvU48mKF8WLSkQ5R2MyzWQ5XZ6j6Tx5f7_krWrFUrUQFBSBicAVLjm4IjlhQmxXnFACkTkp_8Fay-s2zIVR0m0fK6Ac0aKPfOAwRHrWtd6Ss2wxJDACarybK03dYkbA62LPOjg9EdHGxnWc_VzXZgP0rPAOyRPkkfT2T7VF7xx0Bb0vzBfnmACjPofv0O-vdicu5cpz-qKySZKgT9U3nMoI9fQ8DcBA.ITHu0gIqxj93AAolh4KxeptF1ZUNYTMO9c8_Dq1JR4w&dib_tag=se&keywords=single%2Bnail%2Bpolish%2Bcolor&qid=1771477628&sprefix=singl%2Bnail%2Bpolish%2Bcolor%2Caps%2C526&sr=8-14&th=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/517Ih9qkQjL._SL1300_.jpg">
+                    <h5>RARJSM Nude Gel Nail Polish Ruddy Pink Neutral Skin Tone Color Sheer Ice Blush Red Pink Jelly Transparent Nail Gel Polish 15ml Single Bottle Soak off UV LED Cured for Home Salon DIY French Manicure</h5>
+                </div></a>
+                <a href="https://www.amazon.com/OpenLive-16-5ml-Polish-Lasting-Manicure/dp/B0DZCN2257/ref=sr_1_1?crid=20E6TKSA7PU0L&dib=eyJ2IjoiMSJ9.oQJ5pID47FYyI4Hoasa8IBBnPHXEyx1aOrFfF7HOXRPe6sR0rJ4b1w-3Jx7pw6-w5kc8DQI3hJDppvU48mKF8WLSkQ5R2MyzWQ5XZ6j6Tx5f7_krWrFUrUQFBSBicAVLjm4IjlhQmxXnFACkTkp_8Fay-s2zIVR0m0fK6Ac0aKPfOAwRHrWtd6Ss2wxJDACarybK03dYkbA62LPOjg9EdHGxnWc_VzXZgP0rPAOyRPkkfT2T7VF7xx0Bb0vzBfnmACjPofv0O-vdicu5cpz-qKySZKgT9U3nMoI9fQ8DcBA.ITHu0gIqxj93AAolh4KxeptF1ZUNYTMO9c8_Dq1JR4w&dib_tag=se&keywords=single%2Bnail%2Bpolish%2Bcolor&qid=1771477479&sprefix=singl%2Bnail%2Bpolish%2Bcolor%2Caps%2C526&sr=8-1&th=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/61GRSZE7+bL._SX425_.jpg">
+                    <h5>16.5ml Dusty Rose Nail Polish Large Volume Quick Drying Light Pink Nail Polish, Fast Drying and Long Lasting Color Nail Art DIY Home Manicure Gift for Women</h5>
+                </div></a>
+                <a href="https://www.amazon.com/Morovan-Polish-Regular-Finger-Fingernail/dp/B0DK2T3M7K/ref=sr_1_10?crid=20E6TKSA7PU0L&dib=eyJ2IjoiMSJ9.oQJ5pID47FYyI4Hoasa8IBBnPHXEyx1aOrFfF7HOXRPe6sR0rJ4b1w-3Jx7pw6-w5kc8DQI3hJDppvU48mKF8WLSkQ5R2MyzWQ5XZ6j6Tx5f7_krWrFUrUQFBSBicAVLjm4IjlhQmxXnFACkTkp_8Fay-s2zIVR0m0fK6Ac0aKPfOAwRHrWtd6Ss2wxJDACarybK03dYkbA62LPOjg9EdHGxnWc_VzXZgP0rPAOyRPkkfT2T7VF7xx0Bb0vzBfnmACjPofv0O-vdicu5cpz-qKySZKgT9U3nMoI9fQ8DcBA.ITHu0gIqxj93AAolh4KxeptF1ZUNYTMO9c8_Dq1JR4w&dib_tag=se&keywords=single%2Bnail%2Bpolish%2Bcolor&qid=1771477628&sprefix=singl%2Bnail%2Bpolish%2Bcolor%2Caps%2C526&sr=8-10&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/71lSZlH+ruL._SL1500_.jpg">
+                    <h5>Morovan Nail Polish Set Fingernail: Pastel Macaron Rainbow Nail Polish Kit Regular Air Quick Dry Easter Nail Polish Pack for Women Nail Art Design Easter Gift Holiday Party 0.27oz</h5>
+                </div></a>
+               <a href="https://www.amazon.com/OpenLive-Polish-Colors-Seasons-Neutral/dp/B0DHFYVSTL/ref=sr_1_12?crid=20E6TKSA7PU0L&dib=eyJ2IjoiMSJ9.oQJ5pID47FYyI4Hoasa8IBBnPHXEyx1aOrFfF7HOXRPe6sR0rJ4b1w-3Jx7pw6-w5kc8DQI3hJDppvU48mKF8WLSkQ5R2MyzWQ5XZ6j6Tx5f7_krWrFUrUQFBSBicAVLjm4IjlhQmxXnFACkTkp_8Fay-s2zIVR0m0fK6Ac0aKPfOAwRHrWtd6Ss2wxJDACarybK03dYkbA62LPOjg9EdHGxnWc_VzXZgP0rPAOyRPkkfT2T7VF7xx0Bb0vzBfnmACjPofv0O-vdicu5cpz-qKySZKgT9U3nMoI9fQ8DcBA.ITHu0gIqxj93AAolh4KxeptF1ZUNYTMO9c8_Dq1JR4w&dib_tag=se&keywords=single%2Bnail%2Bpolish%2Bcolor&qid=1771477628&sprefix=singl%2Bnail%2Bpolish%2Bcolor%2Caps%2C526&sr=8-12&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/710PoapTmJL._SL1500_.jpg" >
+                    <h5>10ml Nude Pink Nail Polish Set 6 Colors Brown Red Purple All Seasons Neutral Color Quick Dry Nail Polish Set for Women Salon DIY Nail Art</h5>
+                </div></a>
+                <a href="https://www.amazon.com/wet-wild-Shine-Color-Nuclear/dp/B015BUURVU/ref=sr_1_15?crid=20E6TKSA7PU0L&dib=eyJ2IjoiMSJ9.oQJ5pID47FYyI4Hoasa8IBBnPHXEyx1aOrFfF7HOXRPe6sR0rJ4b1w-3Jx7pw6-w5kc8DQI3hJDppvU48mKF8WLSkQ5R2MyzWQ5XZ6j6Tx5f7_krWrFUrUQFBSBicAVLjm4IjlhQmxXnFACkTkp_8Fay-s2zIVR0m0fK6Ac0aKPfOAwRHrWtd6Ss2wxJDACarybK03dYkbA62LPOjg9EdHGxnWc_VzXZgP0rPAOyRPkkfT2T7VF7xx0Bb0vzBfnmACjPofv0O-vdicu5cpz-qKySZKgT9U3nMoI9fQ8DcBA.ITHu0gIqxj93AAolh4KxeptF1ZUNYTMO9c8_Dq1JR4w&dib_tag=se&keywords=single%2Bnail%2Bpolish%2Bcolor&qid=1771477628&sprefix=singl%2Bnail%2Bpolish%2Bcolor%2Caps%2C526&sr=8-15&th=1" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/41aHHPjhy3L._SY300_SX300_QL70_FMwebp_.jpg">
+                    <h5>wet n wild Wild Shine Nail Polish, Orange-Red Nuclear War, Nail Color</h5>
+                </div></a>
+            </div>
+            <h2>NAIL POLISH</h2>
+            <div class="imges">
+                <a href="https://www.amazon.com/NYX-PROFESSIONAL-MAKEUP-Hydra-Primer/dp/B01IE1OUY8/ref=sr_1_3?crid=1LQONFSEND5AS&dib=eyJ2IjoiMSJ9.A5iP73d2aL_7rPqG6Q08J4sdWdJM1QctRhlR7EMTk1UYQsP56SnxbD5dz6viePW6ZmsAAVVznlvRkcC24nBr_k81nk2Wi5QsLTKgBvLk8KCc5BjLuYpVDuCekP8MyvQo0i6dSjpvQMnZpaIdDTVbl216btaunxBHPJ8tAxWMnUPB96J3i490pWVsmjOBXWWik-tALS5AGxyCLKwQALSClJrWjijn_Y5EobtjlgYUklZnTEDYwvzxRCV2Q2jVM17k_QsATf0ICsgXmwcxoV7IbvnDhXwPVxED2bBY1tRYmgQ.JtBN8SVf8y758drMhSzLBPcb46UNpYbFuChtzPRAxOA&dib_tag=se&keywords=PRIMER%2BOF%2BNYX&qid=1771479506&s=beauty-intl-ship&sprefix=primer%2Bof%2Bny%2Cbeauty-intl-ship%2C317&sr=1-3&th=1" target="_blank"><div class="img" id="img1">
+                    <img src="https://m.media-amazon.com/images/I/61MurIqF8GL._AC_UL320_.jpg">
+                    <h5>Click to see full view NYX PROFESSIONAL MAKEUP Hydra Touch Hydrating Primer, Vegan Face Primer</h5>
+                </div></a>
+                <a href="https://www.amazon.com/PhotoReady-Hydrates-Illuminates-Moisturizes-Glycerin/dp/B08MRYWTST/ref=sr_1_2?crid=2WVI49FZXUET4&dib=eyJ2IjoiMSJ9.gO9xpS5vM3SjQFsFTu8hTg-L-LwRHIk73aSa3GRehwBATR-iO09m56b30UEuDsB_Pc6wPKorUDNbVZ1kWhMqvv4m-yZajB-iB3Yf0xYgUwJxro0yq64x3qiQhg7SUYLs.u2LTef-5xvKlRILa92pwzQTkma39i6oE10beIpBjimA&dib_tag=se&keywords=mis%2Brose%2Bprimer&qid=1771479814&s=beauty-intl-ship&sprefix=mis%2Brose%2Bprimer%2Cbeauty-intl-ship%2C504&sr=1-2&th=1" target="_blank"><div class="img" id="img2">
+                    <img src="https://m.media-amazon.com/images/I/71AlP0Pge3L._AC_UL320_.jpg">
+                    <h5>Revlon PhotoReady Face Gloss Rose Glow Primer, Makeup for All Skin Types, Hydrates, Illuminates & Moisturizes, Infused with Glycerin & Olive Oil Extract, 80% Water, 1 Fl Oz</h5>
+                </div></a>
+                <a href="https://www.amazon.com/l-f-Poreless-Skin-Perfecting-Lightweight-Minimizes/dp/B07NSH2B4D/ref=sr_1_17?crid=ABBQF4KI26EU&dib=eyJ2IjoiMSJ9.Noyfi97wgkuQN5bCQMVIAfWiVm1TNqkXuRVoxnazxMbNmNKPUPtkwP1eshCjgeyOxfQow-OMwjYb5MKnQvox1EEet9n6H-arEyoTNBRPTx8ctX0_bId092_ntMBJvLsgEhnwVzrMJ-IrUXfFGcID8VibTzoF41VXf-MFbNOevv6maa6YRdnhda0p_L0AU8DMuo6jAXvITkx2dbWxJV0q9fPDepjcjoeLNdnCY-zS230Dl3NLUHQSph4NPSrHoQ2mIGgpo1n9poIyMY65sbseDBzmMqcV79UNyLL47wdevjk.0b3byP6Au7bm8BT4z6WNxiHLAvly6ihNGZWmJ648IAY&dib_tag=se&keywords=primer&qid=1771479961&s=beauty-intl-ship&sprefix=primer%2Cbeauty-intl-ship%2C516&sr=1-17&th=1" target="_blank"><div class="img" id="img3">
+                    <img src="https://m.media-amazon.com/images/I/610VLWJ0fzL._AC_UL320_.jpg">
+                    <h5>e.l.f. Poreless Face Primer, Skin-Perfecting & Lightweight, Long Lasting, Smooths & Preps to Create Flawless Base, Infused with Tea Tree and Vitamins A & E, 0.74 oz (21g)</h5>
+                </div></a>
+               <a href="https://www.amazon.com/TOUCH-SOL-Poreblem-Primer-Mattifying/dp/B00BR3VPLC/ref=sr_1_13?crid=ABBQF4KI26EU&dib=eyJ2IjoiMSJ9.Noyfi97wgkuQN5bCQMVIAfWiVm1TNqkXuRVoxnazxMbNmNKPUPtkwP1eshCjgeyOxfQow-OMwjYb5MKnQvox1EEet9n6H-arEyoTNBRPTx8ctX0_bId092_ntMBJvLsgEhnwVzrMJ-IrUXfFGcID8VibTzoF41VXf-MFbNOevv6maa6YRdnhda0p_L0AU8DMuo6jAXvITkx2dbWxJV0q9fPDepjcjoeLNdnCY-zS230Dl3NLUHQSph4NPSrHoQ2mIGgpo1n9poIyMY65sbseDBzmMqcV79UNyLL47wdevjk.0b3byP6Au7bm8BT4z6WNxiHLAvly6ihNGZWmJ648IAY&dib_tag=se&keywords=primer&qid=1771479961&s=beauty-intl-ship&sprefix=primer%2Cbeauty-intl-ship%2C516&sr=1-13&th=1" target="_blank"><div class="img" id="img4">
+                    <img src="https://m.media-amazon.com/images/I/61gjwokW1YL._AC_UL320_.jpg" >
+                    <h5>TOUCH IN SOL No Poreblem Primer – Pore Primer for Korean Makeup, Mattifying Primer for Oily Skin, Pore Eraser for Large Pores, Blurring Finish from K Beauty (1.01 fl.oz/30ml)</h5>
+                </div></a>
+                <a href="https://www.amazon.com/dp/B0CWPSD4SD/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B0CWPSD4SD&pd_rd_w=HJzuE&content-id=amzn1.sym.953c7d66-4120-4d22-a777-f19dbfa69309&pf_rd_p=953c7d66-4120-4d22-a777-f19dbfa69309&pf_rd_r=PZ475W5VGAKAK3H25PSJ&pd_rd_wg=7sHQF&pd_rd_r=82a10647-5571-4908-95cc-be1a3653c3db&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWwy" target="_blank"><div class="img" id="img5">
+                    <img src="https://m.media-amazon.com/images/I/61brgZJGanL._AC_UF480,480_SR480,480_.jpg">
+                    <h5>ICONIC LONDON Velvet Smooth Pore-Refining Primer | Whipped, Balmy Primer, Diffuses Pores, Cruelty-Free, Vegan Makeup, 1.01 Fl oz</h5>
+                </div></a>
+            </div>
+        </div>
+    </div>
+    <div class="or">
+            <div class="footer">
+                   <div class="log">
+                     <img height="80px" src="white.png" width="200px" class="img_logo">
+                 </div>
+                 <div class="about">About:
+                     <div class="ab">About BEAUTY_SAVER Family</div>
+                     <div class="ab">Searching Is Easy For You!</div>
+                     <div class="ab">Contact Us Here...</div>
+                     <div class="ab">Refund Policy</div>
+                 </div>
+                 <div class="about">Quick Links:
+                     <div class="ab">All Collection</div>
+                     <a class="ab" href="#" target="_blank"><div>Join Us On Facebook</div></a>
+                     <a class="ab" href="#" target="_blank"><div>Join Us On Instagram</div></a>
+                     <a class="ab" href="#" target="_blank"><div>Join Us On Tiktok</div></a>
+                 </div>
+                 <div class="about">Talk To Us:
+                     <div class="ab">Contact with us 24/7</div>
+                     <div class="ab">WhatsApp: +923006704579</div>
+                 </div>
+            </div>
+    </div>
+        
+    </div>
+</body>
+</html>
